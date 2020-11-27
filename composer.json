@@ -1,0 +1,36 @@
+{
+  "name": "bytic/payments-mobilpay",
+  "type": "library",
+  "license": "MIT",
+  "description": "Payments module for bytic library for mobilpay",
+  "keywords": [],
+  "homepage": "https://github.com/bytic/payments-mobilpay",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\Payments\\Mobilpay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\Payments\\Mobilpay\\Tests\\": "tests/src",
+      "ByTIC\\Payments\\Mobilpay\\Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "bytic/omnipay-mobilpay": "^2.0|^3.0"
+  },
+  "require-dev": {
+    "bytic/payments": "^1.0",
+    "bytic/form": "^1.0",
+    "phpunit/phpunit": "^6.5|^7.5|^8.0|^9.0",
+    "vlucas/phpdotenv": "^4.0",
+    "omnipay/tests": "^3"
+  }
+}

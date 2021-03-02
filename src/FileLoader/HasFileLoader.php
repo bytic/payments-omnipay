@@ -130,6 +130,8 @@ trait HasFileLoader
      */
     protected function getFileDirectoryPath()
     {
-        return $this->getPaymentMethod() ? $this->getPaymentMethod()->getFilesDirectory() : null;
+        return $this->getPaymentMethod() ?
+            $this->getPaymentMethod()->getMediaRepository()->getCollection('files')->getBasePathForMedia()
+            : null;
     }
 }

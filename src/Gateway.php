@@ -10,6 +10,8 @@ use ByTIC\Payments\Mobilpay\FileLoader\HasFileLoader;
 /**
  * Class Gateway
  * @package ByTIC\Payments\Mobilpay
+ * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = array())
+ * @method \Omnipay\Common\Message\RequestInterface fetchTransaction(array $options = [])
  */
 class Gateway extends AbstractGateway
 {
@@ -44,4 +46,5 @@ class Gateway extends AbstractGateway
 
         return false;
     }
+
 }

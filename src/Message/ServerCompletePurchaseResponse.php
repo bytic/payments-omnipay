@@ -13,6 +13,17 @@ class ServerCompletePurchaseResponse extends AbstractServerCompletePurchaseRespo
 {
     use CompletePurchaseResponseTrait;
 
+    /**
+     * @return []
+     */
+    public function getSessionDebug(): array
+    {
+        $notification = $this->getMobilpayNotify();
+        return [
+            'notify' => $notification
+        ];
+    }
+
     /** @noinspection PhpMissingParentCallCommonInspection
      * @return bool
      */

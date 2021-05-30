@@ -59,7 +59,7 @@ trait HasFileLoader
      * @param $key
      * @return mixed
      */
-    public function setPrivateKey(string $key)
+    public function setPrivateKey($key)
     {
         if ($key == 'private.key') {
             $key = $this->loadFileIntoModel('privateKey');

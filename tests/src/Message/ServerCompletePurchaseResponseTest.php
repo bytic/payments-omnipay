@@ -2,8 +2,8 @@
 
 namespace ByTIC\Payments\Mobilpay\Tests\Message;
 
-use ByTIC\Payments\Gateways\Providers\Mobilpay\Message\ServerCompletePurchaseRequest;
-use ByTIC\Payments\Gateways\Providers\Mobilpay\Message\ServerCompletePurchaseResponse;
+use ByTIC\Payments\Mobilpay\Message\ServerCompletePurchaseRequest;
+use ByTIC\Payments\Mobilpay\Message\ServerCompletePurchaseResponse;
 use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
 use Symfony\Component\HttpFoundation\Request;
 

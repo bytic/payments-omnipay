@@ -2,7 +2,7 @@
 
 namespace ByTIC\Payments\Mobilpay\Tests\FileLoader;
 
-use ByTIC\Payments\Gateways\Providers\Mobilpay\Gateway;
+use ByTIC\Payments\Mobilpay\Gateway;
 use ByTIC\Payments\Models\Methods\Types\CreditCards;
 use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
 use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
@@ -18,9 +18,10 @@ class HasFileLoaderTest extends AbstractTest
     public function testSaveToModelOptions()
     {
         /** @var PaymentMethod $paymentMethod */
-        $paymentMethod = \Mockery::mock(PaymentMethod::class)->makePartial();
-        $paymentMethod->setManager(PaymentMethods::instance());
-        $paymentMethod->shouldReceive('save');
+        $paymentMethods = \Mockery::mock(PaymentMethods::class)->makePartial();
+        $paymentMethods->shouldReceive('save');
+        $paymentMethod = new PaymentMethod();
+        $paymentMethod->setManager($paymentMethods);
 
         $paymentMethod->type = 'credit-cards';
         $options = unserialize(MobilpayData::getMethodOptions());

@@ -32,7 +32,7 @@
     "bytic/payments-tests": "^1.0",
     "bytic/form": "^1.0",
     "bytic/common": "^0.9|^1.0",
-    "phpunit/phpunit": "^8.0|^9.0",
+    "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0",
     "vlucas/phpdotenv": "^4.0",
     "omnipay/tests": "^3"
   }

@@ -2,8 +2,8 @@
 
 namespace ByTIC\Payments\Mobilpay\Tests\Message;
 
-use ByTIC\Payments\Gateways\Providers\Mobilpay\Message\CompletePurchaseRequest;
-use ByTIC\Payments\Gateways\Providers\Mobilpay\Message\CompletePurchaseResponse;
+use ByTIC\Payments\Mobilpay\Message\CompletePurchaseRequest;
+use ByTIC\Payments\Mobilpay\Message\CompletePurchaseResponse;
 use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
 use ByTIC\Payments\Tests\Fixtures\Records\Purchases\PurchasableRecord;
 use ByTIC\Payments\Tests\Fixtures\Records\Purchases\PurchasableRecordManager;

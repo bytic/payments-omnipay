@@ -6,6 +6,7 @@ use ByTIC\Omnipay\Mobilpay\Gateway as AbstractGateway;
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\GatewayTrait;
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\OverwriteServerCompletePurchaseTrait;
 use ByTIC\Payments\Mobilpay\FileLoader\HasFileLoader;
+use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
@@ -18,6 +19,16 @@ class Gateway extends AbstractGateway
     use GatewayTrait;
     use OverwriteServerCompletePurchaseTrait;
     use HasFileLoader;
+
+    // ------------ REQUESTS ------------ //
+    /**
+     * @param array $parameters
+     * @return RequestInterface|null
+     */
+    public function doPayT(array $parameters = []): RequestInterface
+    {
+        return $this->createRequestWithInternalCheck('Soap\Payment\DoPayTRequest', $parameters);
+    }
 
     /**
      * @inheritDoc

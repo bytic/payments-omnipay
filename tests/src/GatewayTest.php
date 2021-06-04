@@ -8,8 +8,11 @@ use ByTIC\Omnipay\Mobilpay\Message\PurchaseRequest;
 use ByTIC\Omnipay\Mobilpay\Message\PurchaseResponse;
 use ByTIC\Omnipay\Mobilpay\Message\ServerCompletePurchaseResponse;
 use ByTIC\Omnipay\Mobilpay\Models\Request\Card;
+use ByTIC\Payments\Mobilpay\Gateway;
+use ByTIC\Payments\Mobilpay\Message\Soap\Payment\DoPayTRequest;
 use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
 use Http\Discovery\Psr17FactoryDiscovery;
+use Omnipay\Common\Message\AbstractRequest;
 
 /**
  * Class GatewayTest
@@ -17,6 +20,11 @@ use Http\Discovery\Psr17FactoryDiscovery;
  */
 class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 {
+    /**
+     * @var Gateway
+     */
+    protected $gateway;
+
     public function testPurchaseResponse()
     {
         $this->purchase->id = rand(111111111, 999999999);
@@ -44,9 +52,9 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 
         //Validate first Response
         $body = $gatewayResponse->getBody()->__toString();
-        self::assertRegexp('/ID Tranzactie/', $body);
-        self::assertRegexp('/Descriere plata/', $body);
-        self::assertRegexp('/Site comerciant/', $body);
+        self::assertRegExp('/ID Tranzactie/', $body);
+        self::assertRegExp('/Descriere plata/', $body);
+        self::assertRegExp('/Site comerciant/', $body);
     }
 
     public function testPurchaseResponseSandbox()
@@ -57,7 +65,6 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
         $request = $this->gateway->purchaseFromModel($this->purchase);
         self::assertSame(true, $request->getTestMode());
 
-        /** @var PurchaseResponse $response */
         $response = $request->send();
         self::assertInstanceOf(PurchaseResponse::class, $response);
 
@@ -76,9 +83,16 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 
         //Validate first Response
         $body = $gatewayResponse->getBody()->__toString();
-        self::assertRegexp('/ID Tranzactie/', $body);
-        self::assertRegexp('/Descriere plata/', $body);
-        self::assertRegexp('/Site comerciant/', $body);
+        self::assertRegExp('/ID Tranzactie/', $body);
+        self::assertRegExp('/Descriere plata/', $body);
+        self::assertRegExp('/Site comerciant/', $body);
+    }
+
+    public function test_purchaseWithToken()
+    {
+        $request = $this->gateway->purchaseWithToken([]);
+        self::assertInstanceOf(DoPayTRequest::class, $request);
+
     }
 
     public function testCompletePurchaseResponse()
@@ -99,7 +113,7 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
         self::assertEquals($httpRequest->query->get('id'), $model->id);
     }
 
-    public function testServerCompletePurchaseConfirmedResponse()
+    public function test_ServerCompletePurchaseConfirmedResponse()
     {
         $httpRequest = MobilpayData::getServerCompletePurchaseRequest();
         $response = $this->createServerCompletePurchaseResponse($httpRequest);
@@ -131,7 +145,7 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
         return $response;
     }
 
-    public function testServerCompletePurchaseInsufficientFondsResponse()
+    public function test_ServerCompletePurchaseInsufficientFondsResponse()
     {
         $httpRequest = MobilpayData::getServerCompletePurchaseRequestInsufficientFonds();
         $response = $this->createServerCompletePurchaseResponse($httpRequest);
@@ -202,7 +216,7 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 
     /**
      * @param $purchase
-     * @return m\Mock
+     * @return \Mockery\Mock
      */
     protected function generatePurchaseManagerMock($purchase)
     {

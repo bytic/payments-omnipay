@@ -3,11 +3,12 @@
 namespace ByTIC\Payments\Mobilpay\Tests\FileLoader;
 
 use ByTIC\Payments\Mobilpay\Gateway;
-use ByTIC\Payments\Models\Methods\Types\CreditCards;
 use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
 use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
-use ByTIC\Payments\Tests\Fixtures\Records\PaymentMethods\PaymentMethods;
-use ByTIC\Payments\Tests\Fixtures\Records\PaymentMethods\PaymentMethod;
+use ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethod;
+use ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethods;
+use ByTIC\Payments\Models\Methods\Types\CreditCards;
+use Nip\Records\Locator\ModelLocator;
 
 /**
  * Class HasFileLoaderTest
@@ -20,8 +21,10 @@ class HasFileLoaderTest extends AbstractTest
         /** @var PaymentMethod $paymentMethod */
         $paymentMethods = \Mockery::mock(PaymentMethods::class)->makePartial();
         $paymentMethods->shouldReceive('save');
+
+        ModelLocator::set(PaymentMethods::class, $paymentMethods);
+
         $paymentMethod = new PaymentMethod();
-        $paymentMethod->setManager($paymentMethods);
 
         $paymentMethod->type = 'credit-cards';
         $options = unserialize(MobilpayData::getMethodOptions());

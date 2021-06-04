@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Payments\Tests\Fixtures\Records\PaymentMethods;
+namespace ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods;
 
 use ByTIC\Payments\Models\Methods\Traits\RecordsTrait;
 use Nip\Records\RecordManager;
@@ -14,4 +14,9 @@ class PaymentMethods extends RecordManager
 {
     use SingletonTrait;
     use RecordsTrait;
+
+    public function getBasePathForMedia()
+    {
+        return TEST_FIXTURE_PATH . '/files/';
+    }
 }

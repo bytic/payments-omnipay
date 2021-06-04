@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Payments\Tests\Fixtures\Records\PaymentMethods;
+namespace ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods;
 
 use ByTIC\Payments\Models\Methods\Traits\RecordTrait as PaymentMethodTrait;
 use Nip\Records\Record;
@@ -13,14 +13,16 @@ class PaymentMethod extends Record
 {
     use PaymentMethodTrait;
 
+    protected $managerName = PaymentMethods::class;
+
     public function getRegistry()
     {
     }
 
-    public function getManager()
-    {
-        return PaymentMethods::instance();
-    }
+//    public function inflectManagerName()
+//    {
+//        return PaymentMethods::class;
+//    }
 
     /**
      * @return string

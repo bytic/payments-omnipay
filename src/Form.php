@@ -18,6 +18,7 @@ class Form extends AbstractForm
         $this->initElementSandbox();
         $this->addInput('signature', 'Signature', false);
         $this->addInput('sellerId', 'Seller ID', false);
+        $this->addInput('username', 'Username', false);
 
         $this->addFile('file', 'Certificate', false);
         $this->addTextarea('certificate', 'Certificate', false);

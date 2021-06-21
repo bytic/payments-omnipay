@@ -15,15 +15,15 @@ class MobilpayData
      */
     public static function getMethodOptions()
     {
-        $certificate = gzinflate(base64_decode(getenv('MOBILPAY_PUBLIC_CER')));
-        $private = gzinflate(base64_decode(getenv('MOBILPAY_PRIVATE_KEY')));
+        $certificate = gzinflate(base64_decode(envVar('MOBILPAY_PUBLIC_CER')));
+        $private = gzinflate(base64_decode(envVar('MOBILPAY_PRIVATE_KEY')));
 
         $data = 'a:4:{'
             . 's:15:"payment_gateway";s:8:"mobilpay";'
             . 's:9:"euplatesc";a:2:{s:3:"mid";s:0:"";s:3:"key";s:0:"";}'
             . 's:8:"mobilpay";a:4:{'
             . 's:7:"sandbox";s:2:"no";'
-            . 's:9:"signature";s:24:"' . getenv('MOBILPAY_SIGNATURE') . '";'
+            . 's:9:"signature";s:24:"' . envVar('MOBILPAY_SIGNATURE') . '";'
             . 's:4:"file";s:' . strlen($certificate) . ':"' . $certificate . '";'
             . 's:11:"private-key";s:' . strlen($private) . ':"' . $private . '";}'
             . 's:4:"payu";a:2:{s:8:"merchant";s:0:"";s:9:"secretKey";s:0:"";}}';
@@ -126,9 +126,6 @@ class MobilpayData
         return $httpRequest;
     }
 
-    /**
-     * @return string
-     */
     public static function buildCertificates()
     {
         $basePath = TEST_FIXTURE_PATH . DIRECTORY_SEPARATOR . 'files' . DIRECTORY_SEPARATOR;

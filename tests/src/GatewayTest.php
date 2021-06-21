@@ -12,7 +12,6 @@ use ByTIC\Payments\Mobilpay\Gateway;
 use ByTIC\Payments\Mobilpay\Message\Soap\Payment\DoPayTRequest;
 use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
 use Http\Discovery\Psr17FactoryDiscovery;
-use Omnipay\Common\Message\AbstractRequest;
 
 /**
  * Class GatewayTest

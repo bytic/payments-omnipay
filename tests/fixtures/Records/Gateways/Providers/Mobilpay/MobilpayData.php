@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Payments\Tests\Fixtures\Records\Gateways\Providers\Mobilpay;
+namespace ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\Gateways\Providers\Mobilpay;
 
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 

@@ -19,6 +19,7 @@ class Form extends AbstractForm
         $this->addInput('signature', 'Signature', false);
         $this->addInput('sellerId', 'Seller ID', false);
         $this->addInput('username', 'Username', false);
+        $this->addPassword('password', 'Password', false);
 
         $this->addFile('file', 'Certificate', false);
         $this->addTextarea('certificate', 'Certificate', false);

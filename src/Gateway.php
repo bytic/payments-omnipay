@@ -1,16 +1,16 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay;
+namespace Paytic\Payments\Mobilpay;
 
-use ByTIC\Omnipay\Mobilpay\Gateway as AbstractGateway;
+use Paytic\Omnipay\Mobilpay\Gateway as AbstractGateway;
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\GatewayTrait;
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\OverwriteServerCompletePurchaseTrait;
-use ByTIC\Payments\Mobilpay\FileLoader\HasFileLoader;
+use Paytic\Payments\Mobilpay\FileLoader\HasFileLoader;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
- * @package ByTIC\Payments\Mobilpay
+ * @package Paytic\Payments\Mobilpay
  * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = array())
  * @method \Omnipay\Common\Message\RequestInterface fetchTransaction(array $options = [])
  */

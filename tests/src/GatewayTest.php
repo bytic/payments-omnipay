@@ -1,21 +1,21 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Tests;
+namespace Paytic\Payments\Mobilpay\Tests;
 
 use ByTIC\Common\Tests\Fixtures\Unit\Payments\PaymentMethod;
-use ByTIC\Omnipay\Mobilpay\Message\CompletePurchaseResponse;
-use ByTIC\Omnipay\Mobilpay\Message\PurchaseRequest;
-use ByTIC\Omnipay\Mobilpay\Message\PurchaseResponse;
-use ByTIC\Omnipay\Mobilpay\Message\ServerCompletePurchaseResponse;
-use ByTIC\Omnipay\Mobilpay\Models\Request\Card;
-use ByTIC\Payments\Mobilpay\Gateway;
-use ByTIC\Payments\Mobilpay\Message\Soap\Payment\DoPayTRequest;
-use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
+use Paytic\Omnipay\Mobilpay\Message\CompletePurchaseResponse;
+use Paytic\Omnipay\Mobilpay\Message\PurchaseRequest;
+use Paytic\Omnipay\Mobilpay\Message\PurchaseResponse;
+use Paytic\Omnipay\Mobilpay\Message\ServerCompletePurchaseResponse;
+use Paytic\Omnipay\Mobilpay\Models\Request\Card;
+use Paytic\Payments\Mobilpay\Gateway;
+use Paytic\Payments\Mobilpay\Message\Soap\Payment\DoPayTRequest;
+use Paytic\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
 use Http\Discovery\Psr17FactoryDiscovery;
 
 /**
  * Class GatewayTest
- * @package ByTIC\Payments\Mobilpay\Tests
+ * @package Paytic\Payments\Mobilpay\Tests
  */
 class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 {

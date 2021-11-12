@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Message\Traits;
+namespace Paytic\Payments\Mobilpay\Message\Traits;
 
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasGatewayRequestTrait;
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelRequest;
-use ByTIC\Payments\Mobilpay\Gateway;
+use Paytic\Payments\Mobilpay\Gateway;
 
 /**
  * Trait CompletePurchaseRequestTrait
- * @package ByTIC\Payments\Mobilpay\Message\Traits
+ * @package Paytic\Payments\Mobilpay\Message\Traits
  */
 trait CompletePurchaseRequestTrait
 {

@@ -1,18 +1,18 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Tests\FileLoader;
+namespace Paytic\Payments\Mobilpay\Tests\FileLoader;
 
-use ByTIC\Payments\Mobilpay\Gateway;
-use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
-use ByTIC\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
-use ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethod;
-use ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethods;
+use Paytic\Payments\Mobilpay\Gateway;
+use Paytic\Payments\Mobilpay\Tests\AbstractTest;
+use Paytic\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
+use Paytic\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethod;
+use Paytic\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethods;
 use ByTIC\Payments\Models\Methods\Types\CreditCards;
 use Nip\Records\Locator\ModelLocator;
 
 /**
  * Class HasFileLoaderTest
- * @package ByTIC\Payments\Mobilpay\Tests\FileLoader
+ * @package Paytic\Payments\Mobilpay\Tests\FileLoader
  */
 class HasFileLoaderTest extends AbstractTest
 {

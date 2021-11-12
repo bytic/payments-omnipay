@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\FileLoader;
+namespace Paytic\Payments\Mobilpay\FileLoader;
 
 use ByTIC\Payments\Models\Methods\Traits\RecordTrait as PaymentMethodRecord;
 use Nip\Filesystem\Filesystem;
 
 /**
  * Trait HasFileLoader
- * @package ByTIC\Payments\Mobilpay\FileLoader
+ * @package Paytic\Payments\Mobilpay\FileLoader
  *
  * @method PaymentMethodRecord getPaymentMethod
  */

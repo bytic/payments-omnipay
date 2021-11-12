@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Message;
+namespace Paytic\Payments\Mobilpay\Message;
 
-use ByTIC\Omnipay\Mobilpay\Message\ServerCompletePurchaseRequest as AbstractServerCompletePurchaseRequest;
+use Paytic\Omnipay\Mobilpay\Message\ServerCompletePurchaseRequest as AbstractServerCompletePurchaseRequest;
 
 /**
  * Class ServerCompletePurchaseRequest
- * @package ByTIC\Payments\Mobilpay\Message
+ * @package Paytic\Payments\Mobilpay\Message
  */
 class ServerCompletePurchaseRequest extends AbstractServerCompletePurchaseRequest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods;
+namespace Paytic\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods;
 
 use ByTIC\Payments\Models\Methods\Traits\RecordsTrait;
 use Nip\Records\RecordManager;

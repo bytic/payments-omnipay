@@ -1,12 +1,12 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Tests\Fixtures;
+namespace Paytic\Payments\Mobilpay\Tests\Fixtures;
 
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
  * Class MobilpayData
- * @package ByTIC\Payments\Mobilpay\Tests\Fixtures
+ * @package Paytic\Payments\Mobilpay\Tests\Fixtures
  */
 class MobilpayData
 {

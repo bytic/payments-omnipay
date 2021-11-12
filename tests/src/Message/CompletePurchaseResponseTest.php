@@ -1,17 +1,17 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay\Tests\Message;
+namespace Paytic\Payments\Mobilpay\Tests\Message;
 
-use ByTIC\Payments\Mobilpay\Message\CompletePurchaseRequest;
-use ByTIC\Payments\Mobilpay\Message\CompletePurchaseResponse;
-use ByTIC\Payments\Mobilpay\Tests\AbstractTest;
+use Paytic\Payments\Mobilpay\Message\CompletePurchaseRequest;
+use Paytic\Payments\Mobilpay\Message\CompletePurchaseResponse;
+use Paytic\Payments\Mobilpay\Tests\AbstractTest;
 use ByTIC\Payments\Tests\Fixtures\Records\Purchases\PurchasableRecord;
 use ByTIC\Payments\Tests\Fixtures\Records\Purchases\PurchasableRecordManager;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class CompletePurchaseResponseTest
- * @package ByTIC\Payments\Mobilpay\Tests\Message
+ * @package Paytic\Payments\Mobilpay\Tests\Message
  */
 class CompletePurchaseResponseTest extends AbstractTest
 {

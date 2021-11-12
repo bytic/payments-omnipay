@@ -1,6 +1,6 @@
 <?php
 
-namespace ByTIC\Payments\Mobilpay;
+namespace Paytic\Payments\Mobilpay;
 
 use ByTIC\Payments\Gateways\Providers\AbstractGateway\Form as AbstractForm;
 use ByTIC\Payments\Models\Methods\Types\CreditCards;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Class Form
- * @package ByTIC\Payments\Mobilpay
+ * @package Paytic\Payments\Mobilpay
  */
 class Form extends AbstractForm
 {

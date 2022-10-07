@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Payments\Mobilpay\Tests;
 
 use ByTIC\Common\Tests\Fixtures\Unit\Payments\PaymentMethod;
@@ -17,7 +19,7 @@ use Http\Discovery\Psr17FactoryDiscovery;
  * Class GatewayTest
  * @package Paytic\Payments\Mobilpay\Tests
  */
-class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
+class GatewayTest extends \Paytic\Payments\Tests\Gateways\GatewayTest
 {
     /**
      * @var Gateway
@@ -51,9 +53,9 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 
         //Validate first Response
         $body = $gatewayResponse->getBody()->__toString();
-        self::assertRegExp('/ID Tranzactie/', $body);
-        self::assertRegExp('/Descriere plata/', $body);
-        self::assertRegExp('/Site comerciant/', $body);
+        self::assertMatchesRegularExpression('/ID Tranzactie/', $body);
+        self::assertMatchesRegularExpression('/Descriere plata/', $body);
+        self::assertMatchesRegularExpression('/Site comerciant/', $body);
     }
 
     public function testPurchaseResponseSandbox()
@@ -82,9 +84,9 @@ class GatewayTest extends \ByTIC\Payments\Tests\Gateways\GatewayTest
 
         //Validate first Response
         $body = $gatewayResponse->getBody()->__toString();
-        self::assertRegExp('/ID Tranzactie/', $body);
-        self::assertRegExp('/Descriere plata/', $body);
-        self::assertRegExp('/Site comerciant/', $body);
+        self::assertMatchesRegularExpression('/ID Tranzactie/', $body);
+        self::assertMatchesRegularExpression('/Descriere plata/', $body);
+        self::assertMatchesRegularExpression('/Site comerciant/', $body);
     }
 
     public function test_purchaseWithToken()

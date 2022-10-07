@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Payments\Mobilpay\Tests\Fixtures;
 
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
@@ -133,10 +135,10 @@ class MobilpayData
             mkdir($basePath);
         }
         if (!file_exists($basePath . 'private.key')) {
-            file_put_contents($basePath . 'private.key', gzinflate(base64_decode(getenv('MOBILPAY_PRIVATE_KEY'))));
+            file_put_contents($basePath . 'private.key', gzinflate(base64_decode(envVar('MOBILPAY_PRIVATE_KEY'))));
         }
         if (!file_exists($basePath . 'public.cer')) {
-            file_put_contents($basePath . 'public.cer', gzinflate(base64_decode(getenv('MOBILPAY_PUBLIC_CER'))));
+            file_put_contents($basePath . 'public.cer', gzinflate(base64_decode(envVar('MOBILPAY_PUBLIC_CER'))));
         }
     }
 }

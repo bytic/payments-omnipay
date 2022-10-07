@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Payments\Mobilpay\Tests\FileLoader;
 
 use Paytic\Payments\Mobilpay\Gateway;
@@ -7,7 +9,7 @@ use Paytic\Payments\Mobilpay\Tests\AbstractTest;
 use Paytic\Payments\Mobilpay\Tests\Fixtures\MobilpayData;
 use Paytic\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethod;
 use Paytic\Payments\Mobilpay\Tests\Fixtures\Records\PaymentMethods\PaymentMethods;
-use ByTIC\Payments\Models\Methods\Types\CreditCards;
+use Paytic\Payments\Models\Methods\Types\CreditCards;
 use Nip\Records\Locator\ModelLocator;
 
 /**
@@ -53,6 +55,6 @@ class HasFileLoaderTest extends AbstractTest
 
         self::assertGreaterThan(50, strlen($options['certificate']));
         self::assertGreaterThan(50, strlen($options['privateKey']));
-        self::assertDirectoryNotExists($directoryPath);
+        self::assertDirectoryDoesNotExist($directoryPath);
     }
 }

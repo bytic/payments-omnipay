@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Payments\Mobilpay\Message\Soap\Payment;
 
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelProcessedResponse;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelProcessedResponse;
 
 /**
  * Class DoPayTResponse

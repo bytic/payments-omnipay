@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Paytic\Payments\Mobilpay\Tests\Message;
 
 use Paytic\Payments\Mobilpay\Message\CompletePurchaseRequest;
@@ -24,6 +26,8 @@ class CompletePurchaseResponseTest extends AbstractTest
 
         $model = \Mockery::mock(PurchasableRecord::class)->makePartial();
         $model->shouldReceive('getPaymentGateway')->andReturn(null);
+        $model->id = 999;
+        $model->status = '';
 
         $modelManager = \Mockery::mock(PurchasableRecordManager::class)->makePartial();
         $modelManager->shouldReceive('findOne')->andReturn($model);
@@ -50,7 +54,7 @@ class CompletePurchaseResponseTest extends AbstractTest
         static::assertTrue(method_exists($response, 'getView'));
     }
 
-    protected function getNewResponse()
+    protected function getNewResponse(): CompletePurchaseResponse
     {
         $request = new CompletePurchaseRequest($this->client, new Request());
 

@@ -13,4 +13,9 @@ use Paytic\Payments\Gateways\Providers\AbstractGateway\Message\Traits\HasModelPr
 class DoPayTResponse extends \Paytic\Omnipay\Mobilpay\Message\Soap\Payment\DoPayTResponse
 {
     use HasModelProcessedResponse;
+
+    protected function canProcessModel(): bool
+    {
+        return true;
+    }
 }

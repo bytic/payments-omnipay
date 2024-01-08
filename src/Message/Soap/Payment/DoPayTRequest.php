@@ -14,6 +14,12 @@ class DoPayTRequest extends \Paytic\Omnipay\Mobilpay\Message\Soap\Payment\DoPayT
 {
     use HasModelRequest;
 
+    protected function sendDataResponse($data)
+    {
+        $data['model'] = $this->getModel();
+        return parent::sendDataResponse($data);
+    }
+
     /**
      * @inheritDoc
      */

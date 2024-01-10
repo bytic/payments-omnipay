@@ -3,15 +3,15 @@
 namespace Paytic\Payments\Mobilpay;
 
 use Paytic\Omnipay\Mobilpay\Gateway as AbstractGateway;
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\GatewayTrait;
-use ByTIC\Payments\Gateways\Providers\AbstractGateway\Traits\OverwriteServerCompletePurchaseTrait;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Traits\GatewayTrait;
+use Paytic\Payments\Gateways\Providers\AbstractGateway\Traits\OverwriteServerCompletePurchaseTrait;
 use Paytic\Payments\Mobilpay\FileLoader\HasFileLoader;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
  * @package Paytic\Payments\Mobilpay
- * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = array())
+ * @method \Omnipay\Common\Message\NotificationInterface acceptNotification(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface fetchTransaction(array $options = [])
  */
 class Gateway extends AbstractGateway
@@ -58,4 +58,12 @@ class Gateway extends AbstractGateway
         return false;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function setPassword($value)
+    {
+        $value = html_entity_decode($value);
+        return parent::setPassword($value);
+    }
 }
